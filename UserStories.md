@@ -1,6 +1,6 @@
 **USER STORIES**
 
-**External Site:** 
+**External Site:** <br>
 A user can go to the homepage
 - can user access other website pages?
 A user can book an appointment 
@@ -11,7 +11,7 @@ A user can research current group members and school resources
 - can user research advocate bios?
 - can user find upcoming events?
 
-**Inner Site:**
+**Inner Site:** <br>
 An advocate can login
 - can advocate add their personal information?
 - can advocate add their bios/photos?
