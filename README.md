@@ -13,32 +13,31 @@ In the website we would like to include:
 <table>
   <tr>
     <th><b>External Site: For the Public</b></th>
-    <th>Internal Site: For Advocates only<b>Sports</b></th>
+    <th>Internal Site: For Advocates Only<b></b></th>
   </tr>
   <tr>
     <td>Home page<br>
-                        Login <br>
+                        *Login* <br>
                         Page of outside resources<br>
                         Page of safe sexual practices<br>
                         Advocate bios + hours available<br>
-                        Advocate event information<br>
+                        *Advocate event information*<br>
                         Book an advocate for one-on-one session - will need database<br>
                         Book an advocate for an event<br>
-                        Advocate application<br>
-                        Anonymous reporting (maybe)<br>
-                        Feature to send notifications for upcoming events <br>
-                        Chat system between users and advocates<br>
-                        Locations of blue lights around campus<br>
-                        Share events with friends via social media<br>
+                        *Advocate application*<br>
+                        *Feature to send notifications for upcoming events*<br>
+                        *Chat system between users and advocates*<br>
+                        *Locations of blue lights around campus*<br>
+                        *Share events with friends via social media*<br>
                         Page of photos from past events
 </td>
     <td>Home page<br>
                         Page of outside resources<br>
                         Advocate login page - will need a database<br>
-                        Advocate event information<br>
+                        *Advocate event information*<br>
                         Advocate Calendar<br>
                         Page to enter availability for events and meetings<br>
-                        Feature to send notifications for upcoming events and meetings
+                        *Feature to send notifications for upcoming events and meetings*
   </td>
   </tr>
 </table>
