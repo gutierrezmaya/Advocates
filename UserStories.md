@@ -2,7 +2,7 @@
 
 **External Site:** <br>
 A user can go to the homepage<br>
-- can user access other website pages? <br>
+  can user access other website pages? <br>
 A user can book an appointment<br>
 - can user ask for an advocate at an event?<br>
 - can user request a one-on-one session?<br>
