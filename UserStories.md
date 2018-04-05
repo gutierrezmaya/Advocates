@@ -1,6 +1,6 @@
 **USER STORIES**
 
-**External Site: **
+**External Site:** 
 A user can go to the homepage
 - can user access other website pages?
 A user can book an appointment 
