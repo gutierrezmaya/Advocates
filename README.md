@@ -17,7 +17,7 @@ In the website we would like to include:
   </tr>
   <tr>
     <td>Home page<br>
-                        *Login* <br>
+                        ~~Login~~ <br>
                         Page of outside resources<br>
                         Page of safe sexual practices<br>
                         Advocate bios + hours available<br>
