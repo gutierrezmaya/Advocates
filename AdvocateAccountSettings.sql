@@ -1,0 +1,1 @@
+--store advocate bios, pictures, info
