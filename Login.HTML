@@ -1,2 +1,52 @@
 //advocates login
 //validate information (JS?)
+
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+<title>Login</title>
+</head>
+
+<body>
+
+<h2>Login</h2>
+
+<script type="text/javascript">
+//front-end (JS) validation 
+var valEmail = function() {
+	var em = /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/;
+	if (em.test(String(document.forms["myForm"]["email"].value))) {
+		return true;
+	}
+	else {
+		return false;
+	}
+};
+//get user input and validate no fields are blank
+var valUserInput = function() {
+    var name = document.forms["myForm"]["name"].value;
+    var email = document.forms["myForm"]["email"].value;
+    if (name=="" || email=="") {
+        alert("All fields required");
+        return false;
+    }
+    else {
+    	return true;
+    }
+};
+</script>
+
+<form name="myForm" method="post" onsubmit="return (valEmail() &&valUserInput())"> 
+
+	<!--include "required" to check if blank-->
+<p>Customer Information</p>
+	Name: <input type="text" name="name" value="" required><br>
+	Email: <input type="text" name="email" value="" required><br>
+	Submit <input type="submit" value="Submit"><br>
+
+</form>
+
+</body>
+</html>
