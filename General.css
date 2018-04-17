@@ -53,11 +53,6 @@
 	    color: white;
 	}
 
-	header {
-		background-color: #F5F5F5;
-	   width: 100%;
-	}
-
 
 	body {
 		background-color: white;
@@ -66,9 +61,8 @@
 	    margin-top: 5px;
 	    font-family: sans-serif;
 	    font-size: 18px;
-	    
-	}
 
+	}
 
 
 	/* FOOTER */
