@@ -20,17 +20,21 @@
 	}
 	/* LOGIN BUTTON - animate */
 	.button:active {
-	  background-color: #3e8e41;
+	  background-color: #FF1493;
 	  box-shadow: 0 5px #666;
 	  transform: translateY(4px);
 	}
 
-
+	/* LOGO */
+	img {
+		width: 100px;
+	}
 
 	/* MENU BAR */
 	.topnav {
-		background-color: #008B8B;
+		background-color: grey;
 		overflow: hidden;
+		border: 1px solid #bbb;
 	}
 	.topnav a{
 		color: white;
@@ -41,22 +45,28 @@
 	    text-decoration: none;
 	    font-family: Sans-serif;
 	    font-size: 17px;
+
 	}
 	/* MENU BAR - change color on hover */
 	.topnav a:hover {
-	    background-color: #008080;
+	    background-color: #6dcfbb;
 	    color: white;
 	}
 
+	header {
+		background-color: #F5F5F5;
+	   width: 100%;
+	}
 
 
 	body {
-		background-color: gray;
+		background-color: white;
 		min-height: 700px;
 		overflow: auto;
 	    margin-top: 5px;
 	    font-family: sans-serif;
 	    font-size: 18px;
+	    
 	}
 
 
@@ -69,7 +79,7 @@
 	  height:35px;
 	  text-align: center;
 	  text-decoration: none;
-	  margin: 4px;
+	  margin-top: 4px;
 	}
 	.fa:hover {
 	    opacity: 0.7;
@@ -79,12 +89,11 @@
 	  color: white;
 	}
 	.footer {
-
 	   left: 0;
 	   bottom: 0;
 	   width: 100%;
-	   background-color: #C0C0C0;
-	   color: white;
+	   background-color: #F5F5F5;
+	   color: grey;
 	   text-align: center;
 	   overflow: auto;
 	   position: fixed;
