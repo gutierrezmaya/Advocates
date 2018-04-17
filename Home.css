@@ -25,7 +25,7 @@
   width: auto;
   margin-top: -22px;
   padding: 16px;
-  color: white;
+  color: #bbb;
   font-weight: bold;
   font-size: 18px;
   transition: 0.6s ease;
@@ -87,8 +87,3 @@
   from {opacity: .4} 
   to {opacity: 1}
 }
-
-
-
-
-
