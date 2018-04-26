@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+  	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<link rel="stylesheet" href="General.css">
+	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+</head>
+
+<body>
+
+<!-- display current headshot and bio -->
+<!-- W3CSS container of headshot and bio -->
+	<div class="w3-container" align="center">
+	  <div class="w3-card" style="width:50%" align="left">
+	  	<!-- make this the existing image -->
+	  	<img src="Pics/advocateLogo.jpg" alt="Person" style="width:100%">
+	  	<!-- change existing image to uploaded image -->
+	  	<form action="/action_page.php">
+		  <input type="file" name="pic" accept="image/*">
+		  <input type="submit" value="Upload">
+		</form>
+	    <div class="w3-container" align="left">
+	      <form action="profile.php" method="post"> 
+			    First Name: <input type="text" name="fname" required><br/>
+			    Last Name: <input type="text" name="lname" required><br/>
+			    Bio: <input type="text" name="bio" required><br/>
+		    	<input type="submit" value="Submit">
+		  </form>
+	    </div>
+	  </div>
+	  <br>
+	</div>
+
+</body>
+</html>
