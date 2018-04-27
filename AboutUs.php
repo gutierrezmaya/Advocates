@@ -1,1 +1,0 @@
-//Advocates mission statement
