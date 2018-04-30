@@ -1,1 +1,0 @@
---store personal information (name, email, phone, etc)
