@@ -135,8 +135,7 @@ window.onclick = function(event) {
       <a href="UpcomingEvents.html">Upcoming Events</a>
       <a href="BookAnAdvocate.html">Book an Advocate</a>
       <a href="MeetTheTeam.html">Meet the Team</a>
-      <a href="Resources.html">Emergency Resources</a> 
-      <a href="ContactUs.html">Contact Us</a>
+      <a href="Resources.html">Emergency Resources</a>
     </div>
 
   </header>
