@@ -4,7 +4,7 @@
 //dbconn.php has function to create connection
 include 'dbConnect.php';
 $con = connect_to_db("CAL");
-include 'login.php'; 
+include 'Signup.php'; 
 session_start(); 
 ?>
 
@@ -22,39 +22,12 @@ session_start();
 
     <!--Link to stylesheet (External Style Sheet)-->
     <link rel="stylesheet" href="General.css">
-    <link rel="stylesheet" href="Login.css">
+    <link rel="stylesheet" href="Modal.css">
 
 </head>
 <body id="body" onload="showSlides()">
 
-  <script src="Home.js" type="text/javascript"></script>
-
-  <!-- Login HTML -->
-  <script type="text/javascript">
-
-  //validate password, contains 8 or more letters and at least one number
-  var valPassword = function(password) {
-      var n = /^(?=.*\d)[A-Za-z\d]{8,}$/;
-      if (n.test(String(document.forms["myForm"]["password"].value))) {
-          return true;
-      }
-      else {
-          alert("Invalid Password");
-          return false;
-      }
-  };
-
-  //validate email
-  var valEmail = function() {
-      var em = /^([\w-\.]+@(?!students.claremontmckenna.edu)(?!cmc.edu)([\w-]+\.)+[\w-]{2,4})?$/;
-      if (em.test(String(document.forms["myForm"]["email"].value))) {
-          return true;
-      }
-      else {
-          alert("Invalid Email");
-          return false;
-      }
-  };
+  <script src="Home.js" type="text/javascript">
 
  <?php
  if (isset($_POST["Signup"])) {
@@ -69,28 +42,63 @@ session_start();
     $id = mysqli_stmt_insert_id($insertUser);  
     echo "Welcome, Your new ID is $id <br>";
  }
+
+
+if (isset($_POST["Login"])) {
+  $lemail = $_POST['lemail'];
+  $lpassword = $_POST['lpassword'];
+
+  $query = "SELECT id FROM advocateInformation WHERE email = '$lemail' AND password = '$lpassword'";
+
+  $result = perform_query($con, $query);
+
+  $rows = mysqli_num_rows($result);
+
+  $_SESSION['advocate'] = FALSE;
+
+  if(mysqli_num_rows($result) == 1) {
+    $_SESSION['advocate'] = TRUE;
+
+  } else {
+    $_SESSION['advocate'] = FALSE;
+    echo "Unable to Login";
+  }
+  if($_SESSION['advocate']) {
+    echo "Welcome! You are now logged in";
+  } 
+}
 ?>
- </script>
+
+/*
+var loggedOut() = function() { 
+  <?php
+    //$_SESSION['advocate'] = FALSE;
+    //session_destroy();
+    //echo "Logged out";
+  ?>
+}
+*/
+</script>
+
   <!-- login -->
   <div id="mod1" class="modal">
-    <form class="modal-content animate" onsubmit="return (valPassword() && valEmail()">
+    <form class="modal-content animate" action="Index.php" method="post">
       <div class="imgcontainer">
         <span onclick="document.getElementById('mod1').style.display='none'" class="close" title="Close Modal">&times;</span>
         <img src="Pics/advocateLogo.jpg" id="logoPic" class="avatar"> 
       </div>
       <div class="container">
         <b>Email</b><br>
-        <input type="text" placeholder="Enter Email" name="email" value="" required><br>
+        <input type="text" placeholder="Enter Email" name="lemail" value="" required><br>
         <b>Password</b><br>
-        <input type="password" placeholder="Enter Password" name="password" required>
-        <button type="submit" name="Login">Login</button>
+        <input type="password" placeholder="Enter Password" name="lpassword" required>
+        <button id="loginbutton" type="submit" name="Login">Login</button>
       </div>
     </form>
   </div>
-
-  <!-- sign up --> 
+<!-- sign up --> 
   <div id="mod2" class="modal">
-    <form class="modal-content animate" method="post" onsubmit="return (valPassword() && valEmail())">
+    <form class="modal-content animate" action="Index.php" method="post">
       <div class="imgcontainer">
         <span onclick="document.getElementById('mod2').style.display='none'" class="close" title="Close Modal">&times;</span>
         <img src="Pics/advocateLogo.jpg" id="logoPic" class="avatar"> 
@@ -99,10 +107,10 @@ session_start();
         <b>Full Name</b><br>
         <input type="text" placeholder="Enter Full Name" name="name" value="" required><br>
         <b>Email</b><br>
-        <input type="text" placeholder="Enter Email" name="email" value="" required><br>
+        <input type="text" placeholder="Enter Email" name="email" value="" pattern="[A-Za-z0-9._%+-]+@(cmc.edu|students.claremontmckenna.edu)$" title="Must contain a valid CMC email" required><br>
         <b>Password</b><br>
-        <input type="password" placeholder="Enter Password" name="password" required>
-        <button type="submit" name="Signup">Signup</button>
+        <input type="password" placeholder="Enter Password" name="password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" required>
+        <button id="signupbutton" type="submit" name="Signup">Signup</button>
       </div>
     </form>
   </div>
@@ -123,29 +131,47 @@ window.onclick = function(event) {
 
   <header>
     <img src="Pics/advocateLogo.jpg" id="logoPic"> 
-
     <!-- login and signup buttons -->
-    <button class="button" onclick="document.getElementById('mod1').style.display='block'" style="width:auto;">Login</button>
-    <button class="button" onclick="document.getElementById('mod2').style.display='block'" style="width:auto;">Signup</button>
+    <button id="lbutton" class="button" 
+            onclick="document.getElementById('mod1').style.display='block'" style="width:auto; 
+          <?php if ($_SESSION['advocate']) {
+            echo "display:none";
+          } else if (!$_SESSION['advocate']) {
+            echo "display:block";
+          }?>;">Login</button>
+    <button id="sbutton" class="button" 
+            onclick="document.getElementById('mod2').style.display='block'" style="width:auto; 
+          <?php if ($_SESSION['advocate']) {
+              echo "display:none";
+          } else if (!$_SESSION['advocate']){
+              echo "display:block";
+          }?>;">Signup</button>
+    <!--logout button, if clicked...-->
+    <button id="logout" class="button" onclick="window.location.href='Logout.php'" style="width:auto; 
+        <?php if (!$_SESSION['advocate']) {
+                echo "display:none";
+              } else if ($_SESSION['advocate']){
+                echo "display:block";
+              }?>;">Log Out</button>
     
-  
     <div class="topnav">
-      <a class="active" href="Home.html">Home</a>
-      <a href="AboutUs.html">About Us</a>
-      <a href="UpcomingEvents.html">Upcoming Events</a>
-      <a href="BookAnAdvocate.html">Book an Advocate</a>
-      <a href="MeetTheTeam.html">Meet the Team</a>
-      <a href="Resources.html">Emergency Resources</a>
+      <a class="active" href="Index.php">Home</a>
+      <a href="AboutUs.php">About Us</a>
+      <a href="calendar.php">Book an Advocate</a>
+      <a href="MeetTheTeam.php">Meet the Team</a>
+      <a href="Resources.php">Emergency Resources</a> 
+      <?php
+          if($_SESSION['advocate']) {
+            echo '<a href="EditProfile.php">Edit Profile</a>';
+          }
+        ?> 
     </div>
-
   </header>
-
   <!--Link to stylesheet (External Style Sheet)-->
   <link rel="stylesheet" href="Home.css">
-
   <aside>
     <div class="slideshow-container">
-       
+    
       <div class="mySlides fade">
         <div class="numbertext">1 / 3</div>
         <img src="Pics/carnival1.jpg" style="width:100%">
@@ -166,7 +192,6 @@ window.onclick = function(event) {
 
     </div>
     <br>
-
     <div style="text-align:center">
       <span class="dot" onclick="currentSlide(1)"></span> 
       <span class="dot" onclick="currentSlide(2)"></span> 
@@ -178,9 +203,7 @@ window.onclick = function(event) {
     <!--Introductory paragraph about Advocates-->
     <p id="IntroductoryPara"> 
       We provide confidential support to survivors of any type of sexual violence, in any way needed including counseling, support groups, and reporting.We provide confidential support to survivors of any type of sexual violence, in any way needed including counseling, support groups, and reporting.We provide confidential support to survivors of any type of sexual violence, in any way needed including counseling, support groups, and reporting.We provide confidential support to survivors of any type of sexual violence, in any way needed including counseling, support groups, and reporting.
-
     </p>
-
   </article>
 
   <div class="footer">
