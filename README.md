@@ -5,6 +5,12 @@ Caroline Chou, Maya Gutierrez, Lizzy Riffle, Kira Weiss
  
 **Website for Claremont McKenna Advocates for Survivor of Sexual Assault and Domestic Violence**
  
+Instructions on how to deploy website: 
+1. Open MAMP application, start servers
+2. Add final project folder to htdocs in the MAMP folder
+3. Start the database in the terminal using our events.sql file 
+4. Navigate through the webiste, paying special attention to login/logoff features and booking and appointment to the calendar. 
+
 Claremont McKenna Advocates provide support as a confidential resource to survivors of sexual assault and domestic violence, whether the violation happened on or off of campus. Advocates help direct survivors and allies to the appropriate resource and advocate on their behalf. 
  
 Currently, CMC Advocates does not have a website. Without a website, it is harder for survivors and friends of survivors to find resources for survivors or to learn about the different events that Advocates put on to educate the community. Additionally, with the website Advocates can offer new services to survivors and allies on campus, such as booking an advocate for a one-on-one session or booking an Advocate for your event. 
