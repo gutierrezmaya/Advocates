@@ -7,7 +7,7 @@ Caroline Chou, Maya Gutierrez, Lizzy Riffle, Kira Weiss
  
 Instructions on how to deploy website: 
 1. Open MAMP application, start servers
-2. Add final project folder to htdocs in the MAMP folder
+2. Add Everything folder to htdocs in the MAMP folder
 3. Start the database in the terminal using our CalDatabase.sql file 
 4. Navigate through the website, paying special attention to login/logoff features and booking and appointment to the calendar. 
 
