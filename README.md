@@ -15,6 +15,7 @@ Claremont McKenna Advocates provide support as a confidential resource to surviv
  
 Currently, CMC Advocates does not have a website. Without a website, it is harder for survivors and friends of survivors to find resources for survivors or to learn about the different events that Advocates put on to educate the community. Additionally, with the website Advocates can offer new services to survivors and allies on campus, such as booking an advocate for a one-on-one session or booking an Advocate for your event. 
  
+**Original README file content:**
 In the website we would like to include: 
 <table>
   <tr>
@@ -32,7 +33,7 @@ In the website we would like to include:
     <td>Home page<br>
                         Page of outside resources<br>
                         Advocate login page - will need a database<br>
-                        Advocate event informatio*<br>
+                        Advocate event information<br>
                         Advocate Calendar<br>
                         Page to enter availability for events and meetings<br>
   </td>
